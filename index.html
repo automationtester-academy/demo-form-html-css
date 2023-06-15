@@ -14,18 +14,22 @@
 
   <h1>Inscription au club des tests autos : </h1>
   <div class="container">
-    <form action="" method="post">
+    <div id="notification" class="notification">
+      Veuillez remplir tous les champs requis.
+    </div>
+    <form onsubmit="return validateForm()">
+
       <label for="lastName"> <span> *</span> Nom </label>
-      <input type=" text" name="lastName" placeholder="Entrez votre nom" id="lastName" ; required />
+      <input type=" text" name="lastName" placeholder="Entrez votre nom" id="lastName" />
 
       <label for="firstName"> <span> *</span> Prénom </label>
-      <input type=" text" name="lastName" placeholder="Entrez votre prénom" id="firstName" ; required />
+      <input type="text" name="lastName" placeholder="Entrez votre prénom" id="firstName" />
 
       <label for="email"> <span> *</span> Email</label>
-      <input type="email" name="email" id="email" placeholder="Entrez votre email" required />
+      <input type="email" name="email" id="email" placeholder="Entrez votre email" />
 
       <label for="age"><span> *</span> Age</label>
-      <input type="text" name="age" placeholder="Entrez votre age" required />
+      <input type="text" name="age" id="age" placeholder="Entrez votre age" />
 
       <label>Est-ce que tu recommanderais Automation Tester Academy à un ami ?</label>
       <div class="radio">
@@ -90,6 +94,20 @@
 
     </form>
   </div>
+  <script>
+    function validateForm() {
+      var firstName = document.getElementById("firstName").value;
+      var lastName = document.getElementById("lastName").value;
+      var email = document.getElementById("email").value;
+      var age = document.getElementById("age").value;
+
+      if (firstName === "" || lastName === "" || email === "" || age === "") {
+        var notification = document.getElementById("notification");
+        notification.classList.add("show");
+        return false;
+      }
+    }
+  </script>
 </body>
 
 </html>

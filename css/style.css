@@ -80,3 +80,22 @@ span {
 .simpleParagraph {
   color: red;
 }
+
+.notification {
+  position: absolute;
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #f4be36;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  visibility: box;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s;
+}
+
+.show {
+  visibility: visible;
+  opacity: 1;
+}
